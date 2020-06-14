@@ -23,7 +23,7 @@ public class NotificationListener extends JobExecutionListenerSupport {
     @Override
     public void afterJob(JobExecution jobExecution) {
         if (jobExecution.getStatus() == BatchStatus.COMPLETED) {
-            log.info("!!!JOB FINISHED! Time to verify results");
+            log.info("!!!JOB FINISHED! Time to verify results..");
 
             jdbcTemplate.query("SELECT volt, time FROM VOLTAGE",
                     (rs, row) -> new Voltage(
